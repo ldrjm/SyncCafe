@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sync Café - Artisanal Productivity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ae8d87",
+                        "background": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#2b1613",
+                        "on-tertiary-container": "#4e3d00",
+                        "inverse-primary": "#e3beb8",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "outline-variant": "#d3c3c0",
+                        "on-secondary-fixed-variant": "#394d14",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c19",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#546a2e",
+                        "secondary": "#50652a",
+                        "surface-bright": "#fbf9f4",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#cfe99f",
+                        "primary": "#271310",
+                        "on-background": "#1b1c19",
+                        "surface": "#fbf9f4",
+                        "primary-fixed": "#ffdad4",
+                        "surface-container-low": "#f5f3ee",
+                        "on-surface-variant": "#504442",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#b6d088",
+                        "on-secondary-fixed": "#131f00",
+                        "surface-container-high": "#eae8e3",
+                        "surface-tint": "#745853",
+                        "surface-variant": "#e4e2dd",
+                        "primary-container": "#3e2723",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#d2eca2",
+                        "surface-container": "#f0eee9",
+                        "surface-dim": "#dbdad5",
+                        "on-primary-fixed-variant": "#5b403c",
+                        "primary-fixed-dim": "#e3beb8",
+                        "outline": "#827472",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-container": "#cba72f",
+                        "inverse-surface": "#30312e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #fbf9f4; /* Neutral Surface */
+            -webkit-font-smoothing: antialiased;
+        }
+        .soft-outline {
+            border: 1px solid #d3c3c0;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px -2px rgba(39, 19, 16, 0.08);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface mb-24 md:mb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim sticky top-0 z-50">
+<nav class="grid w-full max-w-container-max grid-cols-[auto_1fr_auto] items-center gap-4 mx-auto px-margin-mobile md:px-margin-desktop py-4">
+<div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Sync Café</h1>
+</div>
+<div class="hidden md:flex items-center justify-center gap-8">
+<a class="text-primary text-label-sm font-label-sm font-bold border-b-2 border-tertiary pb-1 transition-colors duration-200 hover:text-tertiary" href="home.html">Início</a>
+<a class="text-on-surface-variant text-label-sm font-label-sm transition-colors duration-200 hover:text-tertiary" href="clube.html">Clube</a>
+<a class="text-on-surface-variant text-label-sm font-label-sm transition-colors duration-200 hover:text-tertiary" href="cardapio.html">Menu</a>
+<a class="text-on-surface-variant text-label-sm font-label-sm transition-colors duration-200 hover:text-tertiary" href="reserva.html">Reserva</a>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed p-2 rounded-full hover:bg-surface-variant transition-colors">wifi_tethering</button>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 space-y-8">
+<!-- Status Conexão Card -->
+<section>
+<div class="bg-surface-container soft-outline rounded-xl p-6 custom-shadow relative overflow-hidden">
+<!-- Visual highlight for premium feel -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="signal_wifi_4_bar">signal_wifi_4_bar</span>
+<h2 class="text-label-sm font-label-sm tracking-wider uppercase">Status Conexão</h2>
+</div>
+<p class="text-headline-lg-mobile font-headline-lg-mobile text-primary">15 min restantes <span class="text-on-surface-variant font-normal text-body-md">de Wi-Fi grátis</span></p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-bold text-body-md hover:bg-primary-container transition-all active:scale-95 flex items-center justify-center gap-2">
+                        Libere Acesso Ilimitado
+                        <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Atalhos Bento Grid -->
+<section class="space-y-4">
+<h3 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest px-1">Atalhos</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Pedir à Mesa -->
+<button class="bg-surface-container-low soft-outline rounded-xl p-5 flex flex-col items-start gap-4 hover:bg-surface-variant transition-colors group">
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<span class="text-body-md font-bold text-primary">Pedir à Mesa</span>
+</button>
+<!-- Reserva Barista -->
+<button class="bg-surface-container-low soft-outline rounded-xl p-5 flex flex-col items-start gap-4 hover:bg-surface-variant transition-colors group">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="event_seat">event_seat</span>
+</div>
+<span class="text-body-md font-bold text-primary">Reserva Barista</span>
+</button>
+<!-- Scanner QR (Spans 2 cols on mobile for balance) -->
+<button class="col-span-2 md:col-span-1 bg-surface-container-low soft-outline rounded-xl p-5 flex flex-col items-start gap-4 hover:bg-surface-variant transition-colors group">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<span class="text-body-md font-bold text-primary">Scanner QR</span>
+</button>
+</div>
+</section>
+<!-- Recomendação do Barista -->
+<section class="space-y-4 pb-12">
+<div class="flex justify-between items-end px-1">
+<h3 class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">Recomendação do Barista</h3>
+<a class="text-label-sm font-label-sm text-secondary hover:underline" href="cardapio.html">Ver Menu</a>
+</div>
+<div class="bg-white rounded-xl overflow-hidden soft-outline custom-shadow group">
+<div class="md:flex">
+<div class="md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+<img alt="Coffee micro-lot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A macro shot of a meticulously prepared specialty coffee pour-over in a minimalist ceramic cup. Steam rises softly against a warm, sunlit cafe background with rich wooden textures and a hint of lush greenery. The lighting is soft and golden, highlighting the deep espresso tones and the precision of the artisanal brewing process in a high-end coworking environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5eRulvo-FPVjCmRDkF_pYyRL5qNSlCCS04Qf0RiuqhlILhK_67Vsc9OjOOMEB2WZupPSjTcPLylTMobUcyAgF9htot3Bw88JS8jrKE8OfjFeuprb6uoaZs3MUtV3ZdsQpPxGUBP_cQpqBdB_1qBordEMp3pEZloJHVc_P_9xzyRl2RIoemxupiMNNB23sulR4fe6sv50NqmIOxthkMV_YTk_X3HMcJPcV7U1igcYPlVdmi1JncrkqhHpiyvKtWg6-Kpe1GTC5MxK6"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-label-sm">Micro-lote Exclusivo</span>
+</div>
+</div>
+<div class="p-8 md:w-1/2 flex flex-col justify-center space-y-4">
+<div class="space-y-1">
+<p class="text-label-sm font-label-sm text-tertiary">Etiópia Yirgacheffe</p>
+<h4 class="text-headline-lg-mobile font-headline-lg-mobile text-primary">Citrus &amp; Jasmine Fusion</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                            Um café de altitude com notas vibrantes de bergamota e um final floral persistente. Perfeito para manter a clareza mental durante suas horas de foco.
+                        </p>
+<div class="pt-4 flex items-center justify-between">
+<span class="text-headline-lg-mobile font-bold text-primary">R$ 24,00</span>
+<button class="border-2 border-primary text-primary px-6 py-2 rounded-full font-bold hover:bg-primary hover:text-on-primary transition-all">
+                                Pedir Agora
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container dark:bg-surface-container-high flex justify-around items-center px-4 pb-6 pt-3 rounded-t-full md:hidden">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 transition-transform duration-200 active:scale-95" href="home.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-variant transition-colors" href="clube.html">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="text-label-sm font-label-sm">Clube</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-variant transition-colors" href="cardapio.html">
+<span class="material-symbols-outlined" data-icon="coffee">coffee</span>
+<span class="text-label-sm font-label-sm">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-variant transition-colors" href="reserva.html">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="text-label-sm font-label-sm">Reserva</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the connection card button
+        document.querySelector('button.bg-primary').addEventListener('click', function() {
+            this.classList.add('scale-95');
+            setTimeout(() => this.classList.remove('scale-95'), 100);
+            console.log('Solicitando acesso ilimitado...');
+        });
+    </script>
+</body></html>

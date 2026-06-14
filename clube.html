@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sync Café | Clube de Assinatura</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ae8d87",
+                        "background": "#fbf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#2b1613",
+                        "on-tertiary-container": "#4e3d00",
+                        "inverse-primary": "#e3beb8",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "outline-variant": "#d3c3c0",
+                        "on-secondary-fixed-variant": "#394d14",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c19",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#546a2e",
+                        "secondary": "#50652a",
+                        "surface-bright": "#fbf9f4",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#cfe99f",
+                        "primary": "#271310",
+                        "on-background": "#1b1c19",
+                        "surface": "#fbf9f4",
+                        "primary-fixed": "#ffdad4",
+                        "surface-container-low": "#f5f3ee",
+                        "on-surface-variant": "#504442",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#b6d088",
+                        "on-secondary-fixed": "#131f00",
+                        "surface-container-high": "#eae8e3",
+                        "surface-tint": "#745853",
+                        "surface-variant": "#e4e2dd",
+                        "primary-container": "#3e2723",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-fixed": "#d2eca2",
+                        "surface-container": "#f0eee9",
+                        "surface-dim": "#dbdad5",
+                        "on-primary-fixed-variant": "#5b403c",
+                        "primary-fixed-dim": "#e3beb8",
+                        "outline": "#827472",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-container": "#cba72f",
+                        "inverse-surface": "#30312e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-border-gradient {
+            border-image: linear-gradient(to right, #271310, #cba72f) 1;
+        }
+        .foco-card-glow {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+        }
+        @media (max-width: 768px) {
+            .mobile-nav-active {
+                background-color: #3e2723;
+                color: #ae8d87;
+                border-radius: 9999px;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim sticky top-0 z-50">
+<nav class="grid w-full max-w-container-max grid-cols-[auto_1fr_auto] items-center gap-4 mx-auto px-margin-mobile md:px-margin-desktop py-4">
+<div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Sync Café</h1>
+</div>
+<div class="hidden md:flex items-center justify-center gap-8">
+<a class="text-on-surface-variant text-label-sm font-label-sm transition-colors duration-200 hover:text-tertiary" href="home.html">Início</a>
+<a class="text-primary text-label-sm font-label-sm font-bold border-b-2 border-tertiary pb-1 transition-colors duration-200 hover:text-tertiary" href="clube.html">Clube</a>
+<a class="text-on-surface-variant text-label-sm font-label-sm transition-colors duration-200 hover:text-tertiary" href="cardapio.html">Menu</a>
+<a class="text-on-surface-variant text-label-sm font-label-sm transition-colors duration-200 hover:text-tertiary" href="reserva.html">Reserva</a>
+</div>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed p-2 rounded-full hover:bg-surface-variant transition-colors">wifi_tethering</button>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto pb-32">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop pt-12 pb-16">
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-8 md:p-16 text-center">
+<span class="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container font-label-sm rounded-full mb-6 uppercase tracking-widest">Premium Membership</span>
+<h1 class="text-headline-lg-mobile md:text-headline-xl font-headline-xl text-background mb-6">Foco Máximo, Café de Origem.</h1>
+<p class="text-on-primary-container text-body-md max-w-3xl mx-auto mb-10 leading-relaxed">
+                        Transforme sua rotina produtiva com o Sync Clube. Wi-Fi Ilimitado, descontos exclusivos em grãos especiais e taxa de rolha zero para suas reuniões.
+                    </p>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="flex items-center gap-2 bg-surface-container-lowest/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-tertiary-fixed">wifi</span>
+<span class="text-label-sm text-background">Fiber Speed</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-tertiary-fixed">sell</span>
+<span class="text-label-sm text-background">-15% Menu</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-tertiary-fixed">meeting_room</span>
+<span class="text-label-sm text-background">Salas Privadas</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-12">
+<div class="text-center mb-16">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-4">Escolha seu ritmo</h2>
+<p class="text-on-surface-variant max-w-lg mx-auto">Planos pensados para quem precisa de um espaço que entende tanto de produtividade quanto de café.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Plano Grão -->
+<div class="bg-surface-container border border-outline-variant p-8 rounded-xl flex flex-col hover:border-tertiary transition-colors duration-300">
+<div class="mb-8">
+<h3 class="text-headline-lg-mobile font-bold text-primary mb-2">Plano Grão</h3>
+<p class="text-on-surface-variant text-label-sm">O essencial para o seu dia a dia.</p>
+</div>
+<div class="mb-8 flex items-baseline gap-1">
+<span class="text-headline-lg font-bold text-primary">R$ 89</span>
+<span class="text-on-surface-variant text-label-sm">/mês</span>
+</div>
+<ul class="space-y-4 mb-12 flex-grow">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">Wi-Fi Ilimitado (100mbps)</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">5% OFF em todo o Menu</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-md">Reserva prioritária de mesas</span>
+</li>
+<li class="flex items-center gap-3 opacity-40">
+<span class="material-symbols-outlined text-[20px]">block</span>
+<span class="text-body-md line-through">Salas Privativas</span>
+</li>
+</ul>
+<button class="w-full py-4 border border-secondary text-secondary font-bold rounded hover:bg-secondary/5 transition-colors">Selecionar Plano</button>
+</div>
+<!-- Plano Foco -->
+<div class="bg-primary-container p-8 rounded-xl flex flex-col relative overflow-hidden foco-card-glow transform md:-translate-y-4">
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 font-bold rounded uppercase tracking-tighter">Mais Popular</div>
+<div class="mb-8 relative z-10">
+<h3 class="text-headline-lg-mobile font-bold text-background mb-2">Plano Foco</h3>
+<p class="text-on-primary-container text-label-sm">Para alta performance e imersão.</p>
+</div>
+<div class="mb-8 flex items-baseline gap-1 relative z-10">
+<span class="text-headline-lg font-bold text-background">R$ 249</span>
+<span class="text-on-primary-container text-label-sm">/mês</span>
+</div>
+<ul class="space-y-4 mb-12 flex-grow relative z-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="text-body-md text-background">Wi-Fi Fibra 1Gbps Dedicado</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="text-body-md text-background">15% OFF em todo o Menu</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="text-body-md text-background">4h/mês em Salas Privadas</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="text-body-md text-background">Workshops mensais de Barista</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="text-body-md text-background">Taxa de Rolha Zero</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-tertiary-container text-on-tertiary-container font-bold rounded hover:scale-[1.02] transition-transform relative z-10">Assinar Agora</button>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-tertiary/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Benefits -->
+<section class="px-margin-mobile md:px-margin-desktop py-16">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-12 text-center">Experiência Sync</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[240px]">
+<!-- Item 1 -->
+<div class="md:col-span-2 bg-surface-container-high rounded-xl p-8 flex flex-col justify-end relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a professional barista preparing a specialty pour-over coffee in a high-end cafe environment. The lighting is warm and directional, highlighting the golden liquid and the metallic precision of the equipment. Minimalist aesthetic with focus on texture and artisanal quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqUEgVg4-pjvRY4nuNYsbJw1Ojb1mE5T6pC8aFp1ZX11p7_XcWaq3WNkaSDJWFedTDEsAuiiCBcaUNqndbHPdKS-VkHzH2v3o9zgO9BZCjiNIX16k1T-fLsPBRwB31ULnFKeoPMGB8WdcBVsj6cxeSWaxxKgZtU1GdozhUbbS2O3w8UO774iBP2ZzteZiKu0_XKlPzYKhFrEy0H74Ul9aK--ofUKFAd3Al6MLilnvvKSogFzux7Q10cdOpE3TgB2JoKQ64x8jEntRN"/>
+<div class="relative z-10">
+<h4 class="text-headline-lg-mobile font-bold text-primary mb-2">Workshops com Baristas</h4>
+<p class="text-on-surface-variant max-w-sm">Aprenda a arte do café especial com mestres premiados todo último sábado do mês.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-secondary-container rounded-xl p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">speed</span>
+<div>
+<h4 class="text-headline-lg-mobile font-bold text-primary mb-2">Fibra Óptica</h4>
+<p class="text-on-secondary-container">Conectividade redundante para nunca perder o sinal em chamadas importantes.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container rounded-xl p-8 flex flex-col justify-between border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-4xl">meeting_room</span>
+<div>
+<h4 class="text-headline-lg-mobile font-bold text-primary mb-2">Salas Privadas</h4>
+<p class="text-on-surface-variant">Ambientes acusticamente isolados para reuniões presenciais ou remotas.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="md:col-span-2 bg-primary-container rounded-xl p-8 flex items-center gap-8 relative overflow-hidden">
+<div class="flex-1">
+<h4 class="text-headline-lg-mobile font-bold text-background mb-2">Cultura do Networking</h4>
+<p class="text-on-primary-container">Faça parte de uma comunidade de criativos e empreendedores de alto nível.</p>
+</div>
+<div class="flex -space-x-4">
+<img alt="Member 1" class="w-12 h-12 rounded-full border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNb9kwdgL8uadf6aMCdDUxuzhzPb7S1hTlgDaxAizmZfbPFP8RaNtQWIh1tbmoT650M5oIMGFj8mbX2-VgUgDxocUuIcMPVsh0jYNoEU7ikkQ33CbOE-X_U4XJIfgn7xbzKnslujs93eVSSHuq-2_7qYJVcjmLI9SJeNZvoeym_JMfuk7zccCS42QSY6zl61SsQtBLAeukoec8tbXnQbWNyoGjIXPjRXi0m6OHQTuZHWGMUGheKUdFTV21e20YXQ1aYPi7zfccsKpB"/>
+<img alt="Member 2" class="w-12 h-12 rounded-full border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCuQsZo__3ppQXntFWOqPwJqYi5s-qC8vH87mxZs9LMvS4C4zfRNjXZCuERHdM5GidlIQKaDiYszRXj4KNWfzy4bzHz8kpDHJddazXjNkHuNcKn6k74ClDVotxyFocViU1_C6fybXu95TrGAsOa3-9-8TA4mORNY5fajWrVDaP7OkAer0FvjgL0eaH0AzGOgENFTsyFnai4UC5iI6hkNC3Ab2FTtO8Db6bwk38BF4FZZJ1nVmTfvkq3r6mbrN-4L2ei_94nIYCBfJ9"/>
+<img alt="Member 3" class="w-12 h-12 rounded-full border-2 border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvjIFjL850VqvDlgKz7RFpeBt8gMfPCUQVuj200JVLMH5kjdb4KdWGbF8ePTKXhcDDxeIpSuHDI3SHAQUeJMBIpk9wWn6GXYrOe6KYC30uDTnwDKTIGoEoD_HtkxDgTgqEi3cttyCZ4ItBbf-BpLJ2UWlyWdLqvNoMfug0gb3g0q8uFc7RiN5EHY7c2kIxuIY7SaCrGpSH-4IZn94H3PGIpLrTn9fO2yiCMNdLNhYASLg5WwOR7e37xBh7WMrIhkjBt0iINJjMn0yo"/>
+<div class="w-12 h-12 rounded-full border-2 border-primary-container bg-tertiary flex items-center justify-center text-[10px] text-on-tertiary font-bold">+200</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container dark:bg-surface-container-high shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="home.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm mt-1">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-2 mobile-nav-active" href="clube.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-sm mt-1">Clube</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="cardapio.html">
+<span class="material-symbols-outlined">coffee</span>
+<span class="font-label-sm mt-1">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1" href="reserva.html">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-sm mt-1">Reserva</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for plan hovering
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+                card.style.transition = 'transform 0.3s ease';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Simple observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
